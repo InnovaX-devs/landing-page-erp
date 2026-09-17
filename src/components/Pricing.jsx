@@ -2,49 +2,47 @@ import { useReveal } from '../hooks/useReveal'
 
 const PLANS = [
   {
-    name: 'Básico',
-    tagline: 'Para arrancar a ordenar el día a día',
-    price: 'desde $ / mes',
+    name: 'Start',
+    tagline: 'Para gestionar tu negocio de forma simple y ordenada',
+    price: 'desde $40.000 / mes',
     features: [
       'Productos, categorías y marcas',
       'Control de stock',
       'Ventas e historial',
       'Ficha de clientes',
       'Panel con métricas básicas',
-      '1 usuario',
     ],
-    cta: 'Empezar con Básico',
+    cta: 'Empezar con Start',
     ctaClass: 'btn-secondary',
     featured: false,
   },
   {
-    name: 'Intermedio',
-    tagline: 'Para negocios con compras, cuenta corriente y caja activa',
-    price: 'desde $ / mes',
+    name: 'Pro',
+    tagline: 'Para tener una gestión más completa y controlar cada movimiento',
+    price: 'desde $60.000 / mes',
     features: [
-      'Todo lo de Básico',
+      'Todas las funcionalidades del plan Start',
       'Compras y proveedores',
       'Presupuestos para clientes',
       'Cuenta corriente y cobro de deuda',
       'Caja, gastos y flujo de caja',
       'Reportes exportables en PDF',
-      'Varios usuarios con roles',
     ],
-    cta: 'Empezar con Intermedio',
+    cta: 'Empezar con Pro',
     ctaClass: 'btn-grad',
     featured: true,
     badge: 'MÁS ELEGIDO',
   },
   {
-    name: 'A Medida',
-    tagline: 'Para operaciones con necesidades propias',
+    name: 'Custom',
+    tagline: 'Para adaptar el sistema a la forma en que trabaja tu negocio',
     price: 'a cotizar',
     features: [
-      'Todo lo de Intermedio',
+      'Todas las funcionalidades del plan Pro',
       'Adaptado a tu rubro y flujo de trabajo',
       'Integraciones (facturación, pagos, WhatsApp)',
-      'Multi-sucursal o multi-depósito',
-      'Marca propia (white-label)',
+      'Multi-sucursal',
+      'Marca propia',
       'Soporte dedicado y onboarding asistido',
     ],
     cta: 'Hablar con InnovaX',
@@ -62,12 +60,8 @@ export default function Pricing() {
       <div className="section-intro reveal" ref={introRef}>
         <div>
           <p className="section-label">// PLANES</p>
-          <h2>Elegí según el momento de tu negocio.</h2>
+          <h2>Un plan para cada etapa de tu negocio.</h2>
         </div>
-        <p>
-          Empezá simple y sumá módulos cuando el negocio lo pida. Precios orientativos, ajustables
-          según usuarios y volumen.
-        </p>
       </div>
 
       <div className="pricing-grid scrollx reveal" ref={gridRef}>

@@ -9,11 +9,10 @@ export default function Hero() {
           <span></span>SISTEMA DE GESTIÓN
         </p>
         <h1 className="hero-title">
-          Tu negocio, <span className="accent">ordenado</span> de una vez.
+          Todo tu negocio, en un solo <span className="accent">lugar</span>
         </h1>
         <p className="hero-description">
-          Stock, ventas, compras, clientes y caja en un solo sistema. Dejá de pelearte con
-          planillas y andá viendo el negocio en tiempo real.
+          Stock, ventas, compras, clientes y caja en un solo sistema. Olvidate de las planillas y mirá tu negocio en tiempo real.
         </p>
         <div className="hero-buttons">
           <a href="#planes" className="btn btn-primary">
