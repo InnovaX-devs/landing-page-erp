@@ -1,10 +1,14 @@
 import { useReveal } from '../hooks/useReveal'
 
+const WHATSAPP_NUMBER = '5493584257936'
+
 const PLANS = [
   {
     name: 'Start',
     tagline: 'Para gestionar tu negocio de forma simple y ordenada',
-    price: 'desde $40.000 / mes',
+    oldPrice: '$55.000',
+    price: '$40.000 / mes',
+    discount: '-27%',
     features: [
       'Productos, categorías y marcas',
       'Control de stock',
@@ -14,12 +18,17 @@ const PLANS = [
     ],
     cta: 'Empezar con Start',
     ctaClass: 'btn-secondary',
+    tier: 'start',
     featured: false,
+    whatsappMessage:
+      'Hola! Quiero empezar con el plan Start ($40.000/mes). ¿Cómo seguimos?',
   },
   {
     name: 'Pro',
     tagline: 'Para tener una gestión más completa y controlar cada movimiento',
-    price: 'desde $60.000 / mes',
+    oldPrice: '$85.000',
+    price: '$60.000 / mes',
+    discount: '-30%',
     features: [
       'Todas las funcionalidades del plan Start',
       'Compras y proveedores',
@@ -30,8 +39,11 @@ const PLANS = [
     ],
     cta: 'Empezar con Pro',
     ctaClass: 'btn-grad',
+    tier: 'pro',
     featured: true,
     badge: 'MÁS ELEGIDO',
+    whatsappMessage:
+      'Hola! Quiero empezar con el plan Pro ($60.000/mes). ¿Cómo seguimos?',
   },
   {
     name: 'Custom',
@@ -47,9 +59,16 @@ const PLANS = [
     ],
     cta: 'Hablar con InnovaX',
     ctaClass: 'btn-secondary',
+    tier: 'custom',
     featured: false,
+    whatsappMessage:
+      'Hola! Me interesa el plan Custom, quiero cotizar una solución a medida para mi negocio.',
   },
 ]
+
+function buildWhatsAppLink(message) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+}
 
 export default function Pricing() {
   const introRef = useReveal()
@@ -64,13 +83,32 @@ export default function Pricing() {
         </div>
       </div>
 
-      <div className="pricing-grid scrollx reveal" ref={gridRef}>
+      <div className="pricing-grid reveal" ref={gridRef}>
         {PLANS.map((plan) => (
-          <div className={`plan${plan.featured ? ' featured' : ''}`} key={plan.name}>
+          <div
+            className={`plan tier-${plan.tier}${plan.featured ? ' featured' : ''}`}
+            key={plan.name}
+          >
             {plan.badge && <span className="plan-badge">{plan.badge}</span>}
+
             <h3>{plan.name}</h3>
+
             <p className="tagline">{plan.tagline}</p>
-            <p className="price">{plan.price}</p>
+
+            <div className="price">
+              <span className="price-now">{plan.price}</span>
+
+              {plan.oldPrice && (
+                <span className="price-old-row">
+                  <span className="price-old">{plan.oldPrice}</span>
+
+                  {plan.discount && (
+                    <span className="price-badge">{plan.discount}</span>
+                  )}
+                </span>
+              )}
+            </div>
+
             <ul>
               {plan.features.map((f) => (
                 <li key={f}>
@@ -78,13 +116,22 @@ export default function Pricing() {
                 </li>
               ))}
             </ul>
-            <a href="#contacto" className={`btn ${plan.ctaClass}`}>
+
+            <a
+              href={buildWhatsAppLink(plan.whatsappMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`btn ${plan.ctaClass}`}
+            >
               {plan.cta}
             </a>
           </div>
         ))}
       </div>
-      <p className="plan-note">¿necesitás otra combinación de módulos? la armamos con vos.</p>
+
+      <p className="plan-note">
+        ¿necesitás otra combinación de módulos? la armamos con vos.
+      </p>
     </section>
   )
 }

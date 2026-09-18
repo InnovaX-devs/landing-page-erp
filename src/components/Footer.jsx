@@ -16,7 +16,7 @@ export default function Footer() {
         </div>
         <div className="footer-contact">
           <span className="footer-heading">Contacto</span>
-          <a href="mailto:hola@innovax-team.com">hola@innovax-team.com</a>
+          <a href="mailto:innovax.devs@gmail.com">innovax.devs@gmail.com</a>
           <a href="https://www.innovax-team.com/">innovax-team.com</a>
         </div>
       </div>

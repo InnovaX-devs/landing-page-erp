@@ -425,7 +425,9 @@ nav.top {
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   align-items: stretch;
+  padding-top: 12px;
 }
+
 .plan {
   position: relative;
   border: 1px solid var(--line);
@@ -433,13 +435,67 @@ nav.top {
   padding: 32px 28px 34px;
   display: flex;
   flex-direction: column;
-  background: var(--surface);
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.07), rgba(34, 197, 94, 0.02) 60%),
+    var(--surface);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
+
+/* Start: acento cyan sutil, un escalón por encima del base */
+.plan.tier-start {
+  border-color: rgba(21, 128, 61, 0.22);
+  box-shadow: 0 20px 45px -32px rgba(21, 128, 61, 0.22);
+}
+.plan.tier-start::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0.7;
+}
+
+/* Custom: acento violeta sutil, mismo nivel que Start pero con identidad propia */
+.plan.tier-custom {
+  border-color: rgba(14, 164, 114, 0.22);
+  box-shadow: 0 20px 45px -32px rgba(14, 164, 114, 0.22);
+}
+.plan.tier-custom::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, transparent, var(--violet), transparent);
+  opacity: 0.7;
+}
+
+/* Pro: el más destacado, sin scale (evita que se salga del contenedor) */
 .plan.featured {
-  background: var(--surface);
-  border: 1px solid rgba(14, 164, 114, 0.35);
-  box-shadow: 0 30px 70px -40px rgba(14, 164, 114, 0.3), 0 0 0 1px rgba(34, 197, 94, 0.12) inset;
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.12), rgba(14, 164, 114, 0.03) 60%),
+    var(--surface);
+  border: 1px solid rgba(14, 164, 114, 0.4);
+  box-shadow: 0 34px 80px -36px rgba(14, 164, 114, 0.4), 0 0 0 1px rgba(34, 197, 94, 0.14) inset;
+  transform: translateY(-10px);
+  z-index: 2;
 }
+.plan.featured:hover {
+  transform: translateY(-14px);
+}
+
+.plan:hover {
+  transform: translateY(-4px);
+}
+.plan.tier-start:hover,
+.plan.tier-custom:hover {
+  transform: translateY(-6px);
+}
+
 .plan-badge {
   align-self: flex-start;
   font-family: var(--font-mono);
@@ -464,12 +520,42 @@ nav.top {
   line-height: 1.5;
 }
 .plan .price {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   margin: 0 0 22px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--line);
+}
+.price-now {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.price-old-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.price-old {
+  font-family: var(--font-body);
+  text-decoration: line-through;
+  opacity: 0.45;
+  font-size: 13px;
+  font-weight: 400;
+}
+.price-badge {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.14);
+  color: var(--cyan-bright);
 }
 .plan ul {
   list-style: none;
@@ -684,6 +770,12 @@ footer.site-footer {
   }
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+  .plan.featured {
+    transform: none;
+  }
+  .plan.featured:hover {
+    transform: translateY(-4px);
   }
   .why-grid {
     grid-template-columns: 1fr;
