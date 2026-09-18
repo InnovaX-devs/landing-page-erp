@@ -130,7 +130,7 @@ export default function Pricing() {
       </div>
 
       <p className="plan-note">
-        ¿necesitás otra combinación de módulos? la armamos con vos.
+        ¿Necesitás otra combinación de módulos? La armamos con vos.
       </p>
     </section>
   )
