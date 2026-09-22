@@ -10,7 +10,7 @@ export default function Cta() {
   const ref = useReveal()
 
   const whatsappMessage =
-    'Hola! Me interesa conocer más sobre InnovaX y quisiera coordinar una demo para ver cómo podría adaptarse a mi negocio. ¿Cómo seguimos?'
+    'Hola! Me interesa conocer más sobre Stockea y quisiera coordinar una demo para ver cómo podría adaptarse a mi negocio. ¿Cómo seguimos?'
 
   return (
     <section className="cta-section" id="contacto">

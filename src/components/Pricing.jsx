@@ -57,7 +57,7 @@ const PLANS = [
       'Marca propia',
       'Soporte dedicado y onboarding asistido',
     ],
-    cta: 'Hablar con InnovaX',
+    cta: 'Hablar con el equipo',
     ctaClass: 'btn-secondary',
     tier: 'custom',
     featured: false,

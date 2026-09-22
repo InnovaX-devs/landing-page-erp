@@ -3,10 +3,10 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-top">
         <div className="footer-brand">
-          <img src="/innovax-logo.png" alt="InnovaX" />
+          <img src="/innovax-logo.png" alt="" />
           <div>
-            <strong>InnovaX</strong>
-            <p>Gestión para negocios.</p>
+            <strong>Stockea</strong>
+            <p>Gestión para negocios. Un producto de InnovaX.</p>
           </div>
         </div>
         <div className="footer-nav">
@@ -20,7 +20,7 @@ export default function Footer() {
           <a href="https://www.innovax-team.com/">innovax-team.com</a>
         </div>
       </div>
-      <div className="footer-bottom">© 2026 InnovaX</div>
+      <div className="footer-bottom">© 2026 Stockea — desarrollado por InnovaX</div>
     </footer>
   )
 }

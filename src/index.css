@@ -91,6 +91,36 @@ nav.top {
 .brand img {
   width: 28px;
 }
+.brand-name {
+  letter-spacing: 0.02em;
+}
+.brand-by {
+  margin-left: -2px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--muted);
+  white-space: nowrap;
+  
+}
+@media (max-width: 400px) {
+  .brand {
+    gap: 7px;
+  }
+  .brand-by {
+    font-size: 11px;
+  }
+  .navlinks .nav-button {
+    white-space: nowrap;
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 340px) {
+  .brand-by {
+    display: none;
+  }
+}
 .navlinks {
   display: flex;
   gap: 28px;
@@ -250,6 +280,16 @@ nav.top {
   display: flex;
   gap: 0.4rem;
   margin-bottom: 1.2rem;
+}
+.mock-bar {
+  align-items: center;
+}
+.mock-title {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dim);
 }
 .mock-dot {
   width: 9px;

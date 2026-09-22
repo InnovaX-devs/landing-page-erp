@@ -31,7 +31,7 @@ export default function Why() {
     <section className="section">
       <div className="section-intro reveal" ref={introRef}>
         <div>
-          <p className="section-label">// POR QUÉ INNOVAX</p>
+          <p className="section-label">// POR QUÉ STOCKEA</p>
           <h2>No vendemos una plantilla.</h2>
         </div>
         <p>Acompañamos la implementación de punta a punta, no solo la entrega del sistema.</p>

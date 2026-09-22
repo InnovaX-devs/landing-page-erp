@@ -6,7 +6,7 @@ export default function Hero() {
 
       <div className="hero-content reveal visible">
         <p className="eyebrow">
-          <span></span>SISTEMA DE GESTIÓN
+          <span></span>STOCKEA · SISTEMA DE GESTIÓN
         </p>
         <h1 className="hero-title">
           Todo tu negocio, en un solo <span className="accent">lugar</span>
@@ -30,6 +30,7 @@ export default function Hero() {
             <div className="mock-dot r"></div>
             <div className="mock-dot y"></div>
             <div className="mock-dot g"></div>
+            <span className="mock-title">Stockea</span>
           </div>
           <div className="mock-cards">
             <div className="mock-card">
