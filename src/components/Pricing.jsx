@@ -48,7 +48,7 @@ const PLANS = [
   {
     name: 'Custom',
     tagline: 'Para adaptar el sistema a la forma en que trabaja tu negocio',
-    price: 'a cotizar',
+    price: 'A cotizar',
     features: [
       'Todas las funcionalidades del plan Pro',
       'Adaptado a tu rubro y flujo de trabajo',
